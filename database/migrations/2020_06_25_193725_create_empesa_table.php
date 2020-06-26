@@ -19,7 +19,7 @@ class CreateEmpesaTable extends Migration
             $table->string('Direccion');
             $table->string('NombreRepresentante');
             $table->integer('NIT');
-            $table->string('Celular');
+            $table->integer('Celular');
 
         });
     }

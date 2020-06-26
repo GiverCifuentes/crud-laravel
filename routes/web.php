@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('empresa', 'ControladorEmpresa@Index'
+)->name('empresa.index');
+
+Route::get('empresa/crear', 'ControladorEmpresa@create'
+)->name('empresa.create');
+
+Route::post('empresa', 'ControladorEmpresa@store'
+)->name('empresa.store');
+
+Route::get('empresa/{empre}/editar', 'ControladorEmpresa@edit'
+)->name('empresa.edit');
+
+Route::match(['put', 'patch'],'empresa/{empre}/editar', 'ControladorEmpresa@update'
+)->name('empresa.update');
+
+Route::delete('empresa/{empre}', 'ControladorEmpresa@delete')->name('empresa.delete');
